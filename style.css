@@ -1,0 +1,38 @@
+/* Studio index: plain and neutral. Each game page has its own look. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #fafafa;
+  --text: #1a1a1a;
+  --muted: #555;
+  --line: #ddd;
+  --link: #0b57d0;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #161616; --text: #eee; --muted: #b0b0b0; --line: #333; --link: #8ab4f8; }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+main { max-width: 40rem; margin: 0 auto; padding: 3rem 1rem; }
+
+h1 { margin: 0 0 0.25rem; font-size: 2rem; line-height: 1.2; }
+.lead { margin: 0 0 2rem; color: var(--muted); }
+
+a { color: var(--link); overflow-wrap: anywhere; }
+
+.games { list-style: none; margin: 0 0 2rem; padding: 0; border-top: 1px solid var(--line); }
+.games li { border-bottom: 1px solid var(--line); }
+.games a { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; text-decoration: none; color: var(--text); }
+.games a span { color: var(--muted); }
+.games a strong { color: var(--link); text-decoration: underline; font-size: 1.125rem; }
+.games img { flex: none; border-radius: 12px; }

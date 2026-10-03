@@ -1,0 +1,163 @@
+/* Peaks & Perils privacy page. Colours and type from the game's style bible. */
+
+@font-face {
+  font-family: "Lilita One";
+  src: url("fonts/LilitaOne/LilitaOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/Fredoka/Fredoka%5Bwdth,wght%5D.ttf") format("truetype");
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("fonts/Figtree/Figtree%5Bwght%5D.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  --sky-top: #7cc4ec;
+  --sky-bottom: #dff2fb;
+  --meadow-top: #5f9d6d;
+  --meadow-bottom: #2f6344;
+  --card: #f6f2e7;
+  --card-edge: #d5ccb6;
+  --ink: #1f2433;
+  --hud: #1d2e4a;
+  --label: #364d68;
+  --gold: #f0b23e;
+  --gold-dark: #a8741a;
+  --shadow: rgb(31 36 51 / 25%);
+  --scene-h: 170px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--meadow-bottom);
+  color: var(--ink);
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.6;
+}
+
+/* Header: sky, sun, clouds, ridges and the meadow's edge */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(var(--sky-top), var(--sky-bottom));
+  padding: 2rem 1rem calc(var(--scene-h) - 20px);
+  text-align: center;
+}
+.hero svg { position: absolute; pointer-events: none; }
+.sun { top: -50px; right: -40px; width: 200px; height: 200px; }
+.clouds { top: 36px; left: -24px; width: 230px; height: 67px; }
+.scene { left: 0; bottom: -1px; width: 100%; height: var(--scene-h); }
+
+.hero-content { position: relative; }
+
+.icon {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 0.75rem;
+  border-radius: 22px;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+h1 {
+  margin: 0;
+  font-family: "Lilita One", "Fredoka", system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--hud);
+  line-height: 1.1;
+}
+h1 .kicker { display: block; font-size: 1.5rem; letter-spacing: 0.02em; }
+h1 .game { display: block; font-size: clamp(2.5rem, 9vw, 3.5rem); letter-spacing: 0.01em; }
+
+/* The policy on a cream card over the meadow */
+main {
+  display: flow-root; /* keeps the card's negative margin inside main */
+  background: linear-gradient(var(--meadow-top), var(--meadow-bottom) 32rem);
+  padding: 0 1rem 2rem;
+}
+
+.card {
+  position: relative;
+  max-width: 44rem;
+  margin: -40px auto 0;
+  padding: 1.75rem 1.25rem 1.5rem;
+  background: var(--card);
+  border: 3px solid var(--card-edge);
+  border-radius: 16px;
+  box-shadow: 0 6px 14px var(--shadow);
+}
+/* The thin inner trim of a card panel */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1.5px solid var(--card-edge);
+  border-radius: 11px;
+  pointer-events: none;
+}
+
+.card p { margin: 0 0 1rem; }
+.card > :last-child { margin-bottom: 0; }
+
+.updated {
+  font-family: "Fredoka", system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--label);
+  font-size: 1rem;
+}
+
+/* Section headings on a small gold ribbon */
+h2 {
+  margin: 1.75rem 0 0.75rem;
+  font-family: "Lilita One", "Fredoka", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  filter: drop-shadow(0 2px 2px var(--shadow));
+}
+h2 span {
+  display: inline-block;
+  padding: 0.3rem 1.25rem 0.4rem;
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: inset 0 -4px 0 var(--gold-dark);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 0.6rem) 50%, 100% 100%, 0 100%, 0.6rem 50%);
+}
+
+a { color: var(--label); text-decoration: underline; text-underline-offset: 0.15em; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--hud); outline-offset: 2px; border-radius: 2px; }
+
+/* Footer on the dark end of the meadow: white text */
+.site-footer {
+  padding: 0 1rem 2.5rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+.site-footer p { margin: 0 0 0.5rem; }
+.site-footer a { color: #fff; }
+.site-footer a:focus-visible { outline-color: #fff; }
+
+@media (min-width: 40rem) {
+  :root { --scene-h: 220px; }
+  body { font-size: 1.125rem; } /* 18px */
+  .hero { padding-top: 2.75rem; }
+  .sun { top: -40px; right: 4%; }
+  .clouds { left: 6%; width: 300px; height: 88px; }
+  .card { padding: 2.25rem 2.5rem 2rem; margin-top: -56px; }
+  main { padding-bottom: 3rem; }
+}
