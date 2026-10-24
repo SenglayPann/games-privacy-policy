@@ -67,7 +67,7 @@ body {
 .hero svg { position: absolute; pointer-events: none; }
 .sun { top: -50px; right: -40px; width: 200px; height: 200px; }
 .clouds { top: 36px; left: -24px; width: 230px; height: 67px; }
-.scene { left: 0; bottom: -1px; width: 100%; height: var(--scene-h); }
+.scene { left: 0; bottom: -1px; width: 100%; height: var(--scene-h); overflow: visible; }
 
 .hero-content { position: relative; }
 
@@ -137,13 +137,10 @@ h2 {
 }
 h2 span {
   display: inline-block;
-  padding: 0.3rem 1.4rem 0.45rem;
-  background: var(--navy);
-  color: #fff;
-  box-shadow: inset 0 -4px 0 var(--navy-base);
-  text-shadow:
-    0.07em 0 0 var(--ink), -0.07em 0 0 var(--ink), 0 0.07em 0 var(--ink), 0 -0.07em 0 var(--ink),
-    0 0.12em 0 rgb(31 36 51 / 45%);
+  padding: 0.3rem 1.25rem 0.4rem;
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: inset 0 -4px 0 var(--gold-dark);
   clip-path: polygon(0 0, 100% 0, calc(100% - 0.6rem) 50%, 100% 100%, 0 100%, 0.6rem 50%);
 }
 
