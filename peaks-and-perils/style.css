@@ -110,6 +110,8 @@ main {
 }
 
 .card p { margin: 0 0 1rem; }
+.card ul, .card ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+.card li { margin-bottom: 0.4rem; }
 .card > :last-child { margin-bottom: 0; }
 
 .updated {
