@@ -6,6 +6,10 @@ https://senglaypann.github.io/games-privacy-policy/
 Plain HTML and CSS. No build step, no JavaScript, no cookies, no analytics, nothing loaded from another site
 (each page sets a Content-Security-Policy that blocks it).
 
+The studio's logo heads the index page: `cyteoqz-logo.png` (dark lettering), `cyteoqz-logo-dark.png` (light lettering,
+shown in dark mode) and `cyteoqz-icon.png` (the critter alone, the browser tab's icon), rendered from the Cyteoqz splash
+logo with Lilita One. Bump their `?v=` in `index.html` when they change.
+
 | Game | Page |
 |---|---|
 | Peaks & Perils (Android) | https://senglaypann.github.io/games-privacy-policy/peaks-and-perils/ |

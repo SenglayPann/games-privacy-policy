@@ -28,6 +28,12 @@ main { max-width: 40rem; margin: 0 auto; padding: 3rem 1rem; }
 h1 { margin: 0 0 0.25rem; font-size: 2rem; line-height: 1.2; }
 .lead { margin: 0 0 2rem; color: var(--muted); }
 
+/* The studio's logo (light lettering in dark mode, from its own image) heads the page. */
+.studio { margin: 0 0 2rem; text-align: center; }
+.studio h1 { margin: 0 0 0.75rem; line-height: 0; }
+.studio img { width: 180px; max-width: 55vw; height: auto; }
+.studio .lead { margin: 0; }
+
 a { color: var(--link); overflow-wrap: anywhere; }
 
 .games { list-style: none; margin: 0 0 2rem; padding: 0; border-top: 1px solid var(--line); }
